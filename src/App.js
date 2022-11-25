@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// Render Prop
+import { CssBaseline, Paper } from "@mui/material";
 
-function App() {
+import React from "react";
+import Navbar from "./components/navbar";
+import RouterConfig from "./components/routes/routerConfig";
+import "./style.css";
+import Netflix from "./assets/netflix.jpg";
+
+const App = () => {
+  const styles = {
+    paperContainer: {
+      backgroundImage: `url(${Netflix})`,
+    },
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Paper
+      sx={{
+        objectFit: "cover ",
+        backgroundSize: "cover",
+        width: "100%",
+        height: "100vh",
+      }}
+      style={styles.paperContainer}
+      >
+      
+      <CssBaseline />
+      <Navbar />
+      <RouterConfig />
+      
+     
+    </Paper>
   );
-}
+};
 
 export default App;
